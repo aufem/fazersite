@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Oficina de HTML</title>
+        <!-- Reveal.js slides stylesheet -->
+        <link rel="stylesheet" href="revealjs/css/reveal.css">
+        <link rel="stylesheet" href="revealjs/css/theme/white.css">
+        <!-- Personalized stylesheet -->
+        <link rel="stylesheet" href="custom.css">
+    </head>
+
+    <body>
+        <header>
+            <h3>Primeiros passos para fazer um site: Oficina de HTML</h3>
+        </header>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>Requisitos básicos</h2>
+                    <h3>O que precisamos para começar a fazer um site?</h3>
+                    <dl>
+                        <dt>Computador</dt>
+                        <dd>
+                            Um computador. Talvez isso soe óbvio para algumas pessoas, mas não basta um smartphone ou um tablet para escrever código. Antes de colocá-lo em prática, você precisa testá-lo o máximo possível para assegurar que o site funcionará em qualquer plataforma. Para isso, você vai precisar de um computador (com Linux, Windows ou Mac OS).
+                        </dd>
+                        <dt>Software (programa) editor de código</dt>
+                        <dd>
+                            Via de regra, você pode escrever código em um bloco de notas ou até em editores da linha de comando como vim. Só que usar um editor de códigos vai facilitar muito a sua vida por causa dos recursos que eles possuem, como auto-completar e destaque das palavras-chaves da linguagem. Você é livre para escolher o seu editor preferido. Distribuições GNOME do GNU/Linux já vem com o <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a> instalado, mas você também pode optar pelo <a href="https://atom.io/">Atom (software livre)</a> ou pelo <a href="https://sublimetext.com/">Sublime Text</a> (comercial, com a vantagem de ter uma versão portátil para Windows que não precisa ser instalada).
+                        </dd>
+                    </dl>
+                </section>
+                <section>
+                    <dl>
+                        <dt>Web browser (navegador para a web)</dt>
+                        <dd>
+                            Você vai precisar de um navegador para testar seus sites, aliás, deve testar em tantos navegadores quanto possível. Os programas mais utilizados para navegação atualmente são: <a href="https://www.google.com.br/chrome/browser/index.html">Google Chrome</a> (proprietário!), <a href="https://www.mozilla.org/pt-BR/firefox/new/">Mozilla Firefox</a> (software livre), Internet Explorer e Safari. Sugerimos que, se possível, você tenha ao menos dois navegadores instalados para teste. Tanto o Google Chrome quanto o Mozilla Firefox possuem ferramentas para desenvolvedores, que permitem: editar o código diretamente na página e simular o funcionamento do site em outros dispositivos, incluíndo smartphones e tablets. Para usuárias mais avançadas, o Firefox também possui uma edição com mais recursos chamada <a href="https://www.mozilla.org/pt-BR/firefox/developer/">Firefox Developer Edition</a>.
+                        </dd>
+                        <dt>Editor de imagens</dt>
+                        <dd>
+                            Em algum ponto, você vai sentir a necessidade de manipular as imagens que você quer colocar no seu site. Para isso, sugerimos editores livres como o <a href="https://www.gimp.org/">GIMP</a> e o <a href="https://inkscape.org/pt-br/">Inkscape</a>. Assim como o Gedit, esses dois já vem instalados em algumas distribuições GNU/Linux.
+                        </dd>
+                    </dl>
+                    <p>Com o navegador e o editor de códigos, já podemos começar a trabalhar na nossa página!</p>
+                </section>
+
+                <section>
+                    <h2>Planejar!</h2>
+                    <p>Antes que você faça qualquer coisa, você precisa de algumas ideias. O que seu site realmente vai fazer? Um site pode fazer praticamente tudo, mas primeiro você deve manter as coisas em um nível simples. Nós vamos começar criando um site simples com um cabeçalho, uma imagem e alguns parágrafos.</p>
+
+                    <p>Para começar, você deve responder às seguintes questões:</p>
+                        <ol>
+                            <li><strong>Sobre o que vai ser seu site? </strong>Você gosta de gatos, de cachorros ou de viagens?</li>
+                            <li><strong>Qual informação você quer apresentar dentro do seu assunto? </strong>Escreva um título e alguns parágrafos e pense em uma imagem para ilustrar sua página.</li>
+                            <li><strong>Como seu site deve parecer, </strong>em termos simples. Qual é a cor de fundo? Qual é o tipo de fonte apropriado? Formal, escrita à mão, negrito e gritante, sutil?</li>
+                        </ol>
+                </section>
+                <section>
+                    <h3>Rascunhando seu design</h3>
+                    <p>Agora pegue um papel e rascunhe como o seu site vai aparecer. Lembre-se de colocar: um cabeçalho (título), uma imagem e simular alguns parágrafos. Em sites reais e complexos, sempre começamos pelo rascunho e depois construímos a versão digital.</p>
+                    <img src="img/website-drawing.png" alt="rascunho de um site mostrando um cabeçalho escrito Mozilla, uma imagem e um parágrafo.">
+                </section>
+
+                <section>
+                    <h3>Cor do tema</h3>
+                    <p>Para documentos HTML, CSS e em outras aplicações em computação, nós usamos códigos hexadecimal para representar as cores. Você pode consultar a <a href="tabela_cores_RGB.html">tabela de cores aqui</a> e anotar o valor da coluna "RGB Hex". No código, o valor hexadecimal vai sempre ser precedido do sustenido(hashtag), ou seja, o azul, por exemplo, ficará assim: #0000CD</p>
+                    <h3>Imagens</h3>
+                    <p>Se você não tem as imagens que deseja colocar no site, um bom lugar para começar a procurar imagens livres é o <a href="https://commons.wikimedia.org/wiki/P%C3%A1gina_principal">Wikimedia Commons</a>. 
+                    Como não temos internet &#128542;, você vai ter de escolher entre as imagens disponíveis na pasta "imagens".</p>
+                </section>
+
+                <section>
+                    <h2>Lidando com arquivos</h2>
+                    <p>Um site consiste de muitos arquivos: conteúdo em texto, código, folhas de estilo, conteúdo em mídia (vídeos, fotos) e por aí vai. Quando você está construindo um site, você precisa guardar esses arquivos, ter certeza que eles conversam entre si e ter certeza que todo o conteúdo está certo antes de fazer o upload para um servidor. Vamos ver agora algumas questões que você deve ter em mente ao montar a estrutura do site.</p>
+                    <h3>Onde seu site vive no seu computador?</h3>
+                    <p>Quando você está trabalhando em um site localmente no seu próprio computador, você deve manter <em>todos os arquivos relacionados em uma mesma pasta</em> que pode ter subpastas e que reflete a estrutura dos arquivos do site que vai ser publicado em um servidor. A pasta-mãe pode estar em qualquer lugar que você quiser (inclusive em um uma mídia externa como um pendrive), mas você deve colocá-la em algum lugar de fácil acesso, talvez no Desktop, na sua pasta Home, ou no root do seu HD.</p> 
+                    <ol>
+                        <li>Após escolher o local, crie uma nova pasta chamada projetos-web (ou algo do tipo). Essa é a pasta onde seus projetos de site viverão.</li>
+                        <li>Dentro dessa pasta, crie outra pasta para guardar seu primeiro site. Chame ela de site-teste (ou algo mais criativo).</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Deixando de lado as maiúsculas e o espaço</h3>
+                    <p>Você vai perceber que pedimos para que você nomeie pastas e arquivos completamente em letras minúsculas e sem espaços. Isso acontece porque:</p>
+                    <ul>
+                        <li>Muitos computadores, particularmente servidores web, são case-sensitive. Então, por exemplo, se você colocar uma imagem no seu site em site-teste/MyImage.jpg, e então em um outro arquivo você tentar chamar site-teste/myimage.jpg, não vai funcionar.</li>
+                        <li>Browsers, servidores web e linguagens de programação não lidam bem com espaços. Por exemplo, se você usa espaços no nome do seu arquivo, alguns sistemas vão tratar o nome do arquivo como dois nomes. Alguns servidores vão substituir os espaços no nome do arquivo por "%20" (o código para espaço em URLs), quebrando seus links. É melhor separar palavras com traços ou underscores: meu-arquivo.html or meu_arquivo.html.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Qual estrutura seu site deve ter?</h3>
+                    <ol>
+                        <li><code><strong>index.html</strong></code>: Esse arquivo é o que vai carregar a página inicial do seu site. No nosso caso, ele vai conter o conteúdo da sua página, ou seja, o código com os textos e imagens que as pessoas verão quando visitarem seu site. Usando o editor de código, crie um novo arquivo chamado<code> index.html</code> e salve dentro da sua pasta<code> </code><code>site-teste</code> (ou o nome que você deu ao projeto).</li>
+                        <li><strong>pasta<code> imagens</code></strong>: Essa pasta vai conter todas as imagens que você vai usar no seu site. Crie uma pasta chamada <code>imagens</code>, dentro da sua pasta <code>site-teste</code> e coloque ali as imagens que vai utilizar no site.</li>
+                        <li><strong>pasta<code> estilos</code></strong>: Mais pra frente, essa pasta vai conter os códigos CSS usados para dar estilo ao seu conteúdo (por exemplo, indicando cor de texto e de fundo). Crie uma pasta chamada <code>estilos</code>, dentro da pasta <code>site-teste</code>.</li>
+                        <li><strong>pasta<code> scripts</code></strong>: Essa pasta vai conter todos os códigos JavaScript para adicionar funcionalidades interativas para seu site (ex.: botões que carregam dados quando clicados). Crie uma pasta chamada <code>scripts</code>, dentro da sua pasta <code>site-teste</code>.</li>
+                    </ol>
+                    <p>Muito bem! Agora que temos a estrutura montada, podemos começar a editar a nossa página para a web.</p>
+                </section>
+
+                <section>
+                    <h2>Caminhos de arquivo</h2>
+                    <p>Para fazer arquivos conversarem entre si, você tem que fornecer um caminho de arquivo entre eles — basicamente uma rota para que um arquivo saiba onde outro está. Para demonstrar isso, nós vamos começar a editar nosso arquivo index.html e fazê-lo mostrar a imagem que você escolheu e colocou na pasta imagens. (se ainda não fez isso, faça agora!)</p>
+                    <p>Abra o arquivo index.html no editor de código e copie o código abaixo. Não se preocupe com o significado — nós vamos olhar com mais detalhes essa estrutura posteriormente.</p>
+<pre>
+<code>
+&lt!DOCTYPE html>
+&lthtml>
+
+  &lthead>
+    &ltmeta charset="utf-8">
+    &lttitle>My test page&lt/title>
+  &lt/head>
+
+  &ltbody>
+    &ltimg src="" alt="My test image">
+  &lt/body>
+
+&lt/html>
+</code>
+</pre>
+                </section>
+
+                <section>
+                    <p>A linha <code>&ltimg src="" alt="My test image"></code> é o código HTML que vai inserir uma imagem na página. Nós precisamos dizer ao HTML onde a imagem está. A imagem está dentro da pasta imagens, no mesmo diretório do index.html. Para trilhar o caminho de index.html para nossa imagem, o caminho é imagens/nome-da-sua-imagem. Não esqueça de incluir a extensão do arquivo. Por exemplo, nossa imagem é chamada firefox-icon.png, então, nosso caminho é imagens/firefox-icon.png. Insira o caminho do arquivo no seu código HTML, dentro das aspas do código img src="".
+
+                    No nosso código ficou assim:</p>
+                    <code>&ltimg src="imagens/firefox-icon.png" alt="Minha imagem teste"></code>
+
+                    <p>Salve seu arquivo HTML, então carregue em seu navegador. Você deve ver sua nova página mostrando a imagem.</p>
+                    <img src="img/website-screenshot.png" alt="Site mostrando a imagem do logo Mozilla">
+                </section>
+
+                <section>
+                    <h3>Algumas regras gerais para caminhos de arquivo:</h3>
+                    <ul>
+                        <li>Para linkar para um arquivo no mesmo diretório do arquivo HTML, apenas use o nome do arquivo, ex.: <code>my-image.jpg</code>.</li>
+                        <li>Para linkar um arquivo em um sub-diretório, escreva o nome do diretório na frente, mais uma barra, ex.: <code>subdirectory/my-image.jpg</code>.</li>
+                        <li>Para linkar um arquivo <strong>abaixo </strong>do arquivo HTML, use dois pontos. Então, por exemplo, se <code>index.html</code> estiver dentro de uma subpasta de <code>site-teste</code> and <code>my-image.png</code> estiver dentro de <code>site-teste</code>, você pode fazer referência a <code>my-image.png</code> em <code>index.html</code> usando <code>../my-image.png</code>.</li>
+                        <li>Você pode combinar isso como você preferir <code>../subdiretorio/outro-subdiretorio/my-image.png</code>.</li>
+                    </ul>
+                    <p>Sua pasta deve parecer algo do tipo:</p>
+                    <img src="img/tree.png">
+                </section>
+
+                <section>
+                    <h2>HTML básico</h2>
+                    <p>Hypertext Markup Language (HTML), ou Linguagem de Marcação de Hipertexto, é o código que você usa para estruturar seu conteúdo web, dando significado e propósito. Por exemplo, meu conteúdo é organizado em parágrafos, ou em uma lista numerada? Eu tenho imagens na minha página? Eu tenho uma tabela de dados? Quem vai dar essas informações ao navegador é o HTML.
+                    <h3>Mas o que é HTML realmente?</h3>
+                    <p>O HTML consiste de uma série de <em>elementos</em>, que você junta ao redor de diferentes partes do seu conteúdo para que ele apareça ou aja de um determinado jeito. Por exemplo, veja a seguinte linha de conteúdo:
+                    <pre><code>Meu gato é muito rabugento.</code></pre>
+                    <p>Se nós queremos oficialmente dizer que isso é um parágrafo, nós podemos envolver o elemento em um código (&ltp>):</p>
+                    <pre><code>&ltp>Meu gato é muito rabugento.&lt/p></code></pre>
+                </section>
+
+                <section>
+                    <h2>Anatomia de um elemento HTML</h2>
+                    <p>Vamos explorar o parágrafo mais profundamente.</p>
+                    <img src="img/grumpy-cat-small.png">
+                    <p>As principais partes de um elemento são:</p>
+                    <ol>
+                        <li>A<strong> tag de abertura</strong> (opening tag): Consiste no nome do elemento (no caso, p), envolvido em <strong>chaves</strong> (chevrons) de abertura e fechamento. Isso demonstra onde o elemento começa, ou onde seu efeito se inicia — nesse caso, onde é o começo do parágrafo.</li>
+                        <li>A <strong>tag de fechamento</strong> (closing tag): Isso é a mesma coisa que a tag de abertura, exceto que inclui uma barra antes do nome do elemento. Isso demonstra onde o elemento acaba — nesse caso, onde fica o fim do parágrafo. Esquecer de incluir uma tag de fechamento é um dos erros mais comuns de iniciantes, e pode levar a resultados estranhos.</li>
+                        <li>O <strong>conteúdo</strong> (content): Esse é o conteúdo do elemento, que nesse caso é só texto.</li>
+                        <li>O <strong>elemento </strong>(element): A tag de abertura, com a de fechamento, com o conteúdo formam o elemento.</li>
+                        </ol>
+                </section>
+
+                <section>
+                    <h3>Atributos</h3>
+                    <p>Elementos também podem ter atributos, que parecem assim:</p>
+                    <img src="img/grumpy-cat-attribute-small.png">
+                    <p>Atributos contém informação extra sobre o elemento, que você não quer que apareça no elemento de fato. Nesse caso, o atributo classe (class) permite que você dê ao elemento um nome de identificação (editor-note), que depois pode ser usado para dar ao elemento informações de estilo ou outras coisas.</p>
+                    <p>Um atributo sempre deve ter:</p>
+                    <ol>
+                        <li>Um espaço entre ele e o nome do elemento (ou o atributo anterior, se o elemento já tiver um )</li>
+                        <li>O nome do atributo, seguido por um sinal de igual</li>
+                        <li>Aspas de abertura e fechamento, envolvendo todo o valor do atributo</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Aninhando elementos</h3>
+                    <p>Você pode colocar elementos dentro de outros elementos também — isso é chamado aninhar (<strong>nesting</strong>). Se quisermos declarar que o gato é MUITO rabugento, podemos envolver a palavra "muito" em um <code>&lt;strong&gt;</code>, o que significa que a palavra deve ser fortemente enfatizada:</p>
+                    <pre><code>&lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy.&lt;/p&gt;</code></pre>
+                    <p>Contudo, você precisa ter certeza que seus elementos estão devidamente aninhados: no exemplo acima, nós abrimos o elemento &lt;p&gt; primeiro, depois o negrito, então temos que fechar o negrito primeiro e depois o p. A forma a seguir é <strong>incorreta</strong>:</p>
+<pre><code>&lt;p&gt;My cat is &lt;strong&gt;very grumpy.&lt;/p&gt;&lt;/strong&gt;</code></pre>
+                    <h3>Elementos vazios</h3>
+                    <p>Alguns elementos não tem conteúdo, e são chamados <strong>elementos vazios</strong>. Considere o elemento <code>&lt;img&gt;</code> que temos na nossa HTML:</p>
+                    <pre><code>&lt;img src="images/firefox-icon.png" alt="My test image"&gt;</code></pre>
+                    <p>Ele contem dois atributos, mas não há tag <code>&lt;/img></code> de fechamento, e não há conteúdo interno. Isso acontece porque uma imagem não envolve conteúdo para ter efeito em si mesma. Sua proposta é incorporar uma imagem na página HTML, no lugar que o código aparece.</p>
+                </section>
+
+                <section>
+                    <h2>Anatomia do HTML</h2>
+                    <p>Isso é o básico dos elementos HTML individuais, mas eles não são muito úteis por si só. Agora vamos ver como elementos individuais podem formar uma página inteira de HTML. Vamos voltar ao index.html e analisar o código que está lá.</p>
+                    <p>Nós temos:</p>
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> — o doctype. Há muito tempo, quando o HTML era novo, doctypes eram criados para agir como links para um conjunto de regras que a página HTML tinha que seguir para ser considerada bom HTML, o que poderia significar checagem automática ou outras coisas úteis. No entanto, esses dias ninguém se importa sobre eles, e eles são somente um artifício histórico que precisa ser incluído para tudo funcionar bem. Por agora, é tudo o que você precisa saber.</li>
+                        <li><code>&lt;html&gt;&lt;/html&gt;</code> — <code>o elemento &lt;html&gt;</code>. Esse elemento envolve todo o conteúdo da página e às vezes é conhecido como o elemento raiz.</li>
+                        <li><code>&lt;head&gt;&lt;/head&gt;</code> — o elemento <code>&lt;head&gt;</code>. Esse elemento age como um recipiente de <strong>tudo o que você deseja incluir em uma página HTML que <em>não é</em> o conteúdo que você quer mostrar para quem vê sua página</strong>. Isso inclui coisas como palavras-chave e uma descrição que você quer que apareça nos resultados de busca, CSS para dar estilo ao conteúdo, declarações de conjuntos de caracteres, e mais.</li>
+                        <li><code>&lt;body&gt;&lt;/body&gt;</code> — o elemento <code>&lt;body&gt;</code>. Contém <em>todo</em> o conteúdo que você quer mostrar ao público que visita sua página, seja texto, imagens, vídeos, jogos, faixas de áudio tocáveis ou seja lá o que for. Para algo aparecer na sua página, <em>tem de ser colocado dentro do elemento body</em>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                        <ul>
+                            <li><code>&lt;meta charset="utf-8"&gt;</code> — esse elemento aponta qual conjunto de caracteres seu documento deve usar para o utf-8, que inclui praticamente todos os caracteres conhecidos por todas as linguagens humanas. Basicamente, isso pode lidar com todo conteúdo em texto que você colocar. Não há razão para não escrever esse código, e vai te ajudar a evitar problemas depois.</li>
+                            <li><code>&lt;title&gt;&lt;/title&gt;</code> — isso indica o título da sua página, que <em>é o título que aparece no topo de navegador</em> quando sua página carrega, e é usado para descrever a página quando você a coloca nos favoritos.</li>
+                        </ul>
+                </section>
+
+                <section>
+                    <h3>Imagens</h3>
+                    <p>Vamos voltar nossa atenção para o elemento de imagem novamente:</p>
+                    <pre>&lt;img src="images/firefox-icon.png" alt="My test image"&gt;</pre>
+                    <p>Como dissemos antes, isso incorpora uma imagem na nossa página na posição que aparece. Isso é feito pelo atributo <code>src</code> (source), que contém o caminho para nosso arquivo de imagem.</p>
+                    <p>Mas nós também incluímos um atributo <code>alt</code> (alternative) — que contém algum texto que descreve a imagem, e pode ser acessado por usuários que não podem ver a imagem, talvez porque:</p>
+                    <ol>
+                        <li>Eles são cegos ou parcialmente cegos. Usuários com deficiência visual significativa geralmente usam ferramentas chamadas Leitores de Tela para lerem o texto alt.</li>
+                        <li>Algo deu errado no código, o que significa que a imagem não pode ser mostrada. Por exemplo, tente deliberadamente mudar o caminho dentro do atributo <code>src</code> para fazê-lo ficar incorreto. Se você salvar e recarregar a página, você deve ver algo assim no lugar da imagem:</li>
+                    </ol>
+                    <img src="img/alt-text-example.png" alt="My test image">
+                    <p>A frase chave sobre texto alt é "texto que descreve a imagem". O texto alt que você escreve deve dar ao leitor o suficiente para dar uma boa ideia do que a imagem mostra, a partir da leitura.  Então nosso texto "My test image" (minha imagem teste) não é bom. Um texto melhor poderia ser "A logo do Firefox: uma raposa em chamas envolvendo a Terra."</p>
+                </section>
+
+                <section>
+                    <h3>Marcando o texto</h3>
+                    <h4>Cabeçalhos</h4>
+                    <p>Elementos de cabeçalho permitem que você especifique que certas partes do seu conteúdo são cabeçalhos ou sub-cabeçalhos do seu conteúdo. Do mesmo jeito que um livro tem um título principal e um título para cada capítulo e subtítulos dentro desses, um documento HTML também pode. HTML contém seis níveis de cabeçalho, <code>&lt;h6&gt;</code> embora você vá provavelmente usar mais o 3-4:</p>
+<pre>&lt;h1&gt;Meu cabeçalho principal&lt;/h1&gt;
+&lt;h2&gt;Meu cabeçalho secundário&lt;/h2&gt;
+&lt;h3&gt;Meu sub-cabeçalho&lt;/h3&gt;
+&lt;h4&gt;Meu sub-sub-cabeçalho&lt;/h4&gt;</pre>
+                    <p>Agora é sua vez: tente adicionar um título que tem a ver com sua página, acima do seu elemento <code>&lt;img></code>.</p>
+                    <h3>Parágrafo</h3>
+                    <p>Como explicado anteriormente, os elementos <code>&lt;p&gt;</code> contém parágrafos de texto; você vai usá-los bastante para marcar conteúdo de texto.</p>
+                    <pre>&lt;p&gt;Esse é um parágrafo isolado.&lt;/p&gt;</pre>
+                    <p>Agora adicione seu texto com alguns parágrafos, logo abaixo do seu elemento &lt;img&gt;.</p>
+                </section>
+
+                <section>
+                    <h3>Links</h3>
+
+                    <p>Links são muito importantes — eles são o que fazem a Web ser de fato uma REDE. Para implementar um link, nós precisamos de usar uma âncora — <code>&lt;a> </code> — o <em>a</em> é uma abreviatura de "anchor" ("âncora"). Para fazer algum texto dentro do seu parágrafo virar um link, siga esses passos:</p>
+                    <ol>
+                        <li>Escreva algum texto. Nós escolhemos o texto "Manifesto do Autonomia Feminista Tecnológica".</li>
+                        <li>Envolva o texto em um elemento &lt;a&gt;, assim:
+<pre>&lt;a&gt;Manifesto do Autonomia 
+Feminista Tecnológica&lt;/a&gt;
+</pre></li>
+                        <li>Dê ao elemento &lt;a&gt; um atributo href, assim:
+<pre>&lt;a href=""&gt;Manifesto do Autonomia Feminista Tecnológica&lt;/a&gt;</pre></li>
+                        <li>Escreva no valor do atributo o endereço que você quer linkar:
+<pre>&lt;a href="https://naoenoveladasoito.com.br/manifesto"&gt;Manifesto do 
+Autonomia Feminista Tecnológica&lt;/a&gt;</pre></li>
+                    </ol>
+                </section>
+
+                <section>
+                    <p>Você pode ter resultados inesperados se você omitir o <code>https://</code> ou o <code>http://</code>, o chamado <em>protocolo</em>, no começo do endereço web (URL). Então depois de criar um link, clique nele para ter certeza de que ele está indo para onde você deseja.</p>
+                    <p><em>href</em> pode parecer uma escolha obscura para um nome de atributo, em uma primeira impressão. Se você está tendo problemas para lembrar do nome, lembre que significa <em>hypertext reference</em>. (referência em hipertexto)</p>
+                    <p>Adicione um link para sua página agora, se você ainda não tiver feito.</p>
+                </section>
+
+                <section>
+                    <h3>Listas</h3>
+                    <p>Um monte de conteúdo da Web está organizado em listas, então o HTML tem elementos especiais para elas. Toda lista deve ter pelo menos 2 elementos. Os tipos mais comuns de listas são as ordenadas e as não-ordenadas:</p>
+                    <ol>
+                        <li><strong>Listas não-ordenadas</strong> (unordered list) são para listas onde a ordem dos itens não importa, como uma lista de compras, por exemplo. Essas são envolvidas em um elemento <code>&lt;ul></code> (ou elemento HTML de Lista desordenada) representa uma lista de itens sem ordem rígida, isto é, uma coleção de itens que não trazem uma ordenação numérica e as suas posições, nessa lista, são irrelevantes. Caracteristicamente, os itens em uma lista desordenada são exibidos com um marcador que pode ter várias formas, como um ponto, um círculo, ou um quadrado. O tipo de marcador não é definido na descrição HTML da página, mas na folha de estilos CSS associada.</li>
+                        <li><strong>Listas Ordenadas (ordered list)</strong> são para listas onde a ordem dos itens importa, como uma receita. Essas são envolvidas em um elemento <code>&lt;ol></code>, que representa uma lista de itens ordenados.</li>
+                    </ol>
+                    <p>Cada item dentro das listas é posto dentro de um elemento <code>&lt;li></code>. Este item deve sempre estar contido em um elemento pai: uma lista ordenada (&lt;ol>), uma lista desordenada (&lt;ul>), ou um menu (&lt;menu>) e representa uma única entidade dessa lista.</p>
+                </section>
+                <section>
+                    <p>Então, por exemplo, se nós quisermos tornar uma parte de um parágrafo uma lista: </p>
+
+<pre>&lt;p&gt;Alguns exemplos de redes sociais livres e 
+abertas: Diáspora, Riseup/Crabgrass, 
+Blogoosfero, GNUSocial. Elas respeitam a 
+privacidade das usuárias, oferecem a quem usa 
+controle sobre o conteúdo que é publicado e 
+quem utiliza mantém o domínio sobre seus 
+próprios dados e arquivos pessoais. &lt;/p&gt;</pre>
+
+<p>Nós podemos fazer assim:</p>
+
+<pre><code>&lt;p&gt;Alguns exemplos de redes sociais livres e 
+abertas: &lt;/p&gt;
+    
+&lt;ul&gt; 
+  &lt;li&gt;Diáspora&lt;/li&gt;
+  &lt;li&gt;Riseup/Crabgrass&lt;/li&gt;
+  &lt;li&gt;Blogoosfero&lt;/li&gt;
+  &lt;li&gt;GNUSocial&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Elas respeitam a privacidade das usuárias, oferecem a quem usa controle sobre o conteúdo que é publicado e quem utiliza mantém o domínio sobre seus próprios dados e arquivos pessoais. &lt;/p&gt;</code></pre>
+                    <p>Tente adicionar uma lista ordenada ou não-ordenada na sua página.</p>
+                </section>
+
+                <section>
+                    <h3>Conclusão</h3>
+                    <p>Se você seguiu todas as instruções até aqui, você deve terminar com uma página que pareça algo do tipo (você também pode vê-la aqui):</p>
+                    <p>Se você ficar emperrado, pode sempre comparar seu trabalho com nosso código-exemplo finalizado.</p>
+                    <p>Aqui, nós só arranhamos na superfície do HTML. Para descobrir mais, continue vindo nos encontros do Autonomia Feminista Tecnológica!</p>
+                </section>
+
+                <section>
+                    <img src="img/logo-320px.svg">
+                    <h2>Autonomia Feminista Tecnológica</h2>
+                    <h4><a href="https://naoenoveladasoito.com.br">www.naoenoveladasoito.com.br</a></h4>
+                    <a href="https://quitter.se/aufem">quitter.se/aufem</a>
+                    <br>
+                    <a href="mailto:aufem@openmailbox.org">aufem@openmailbox.org</a>
+                </section>
+
+                <section>
+                    <h2>Fontes:</h2>
+                    <p>Conteúdo adaptado de: <a href="https://developer.mozilla.org/pt-BR/docs/Aprender/Getting_started_with_the_web">Mozilla Developer Network - Começando na Web</a></p>
+                    <p>Estatísticas de navegação: <a href="http://www.w3schools.com/browsers/default.asp">w3schools Browser Statistics</a></p>
+                    <p>Tabela de cores RGB: <a href="https://web.njit.edu/~kevin/rgb.txt.html">RGB to Color Name Mapping (Triplet and Hex)</a>. Copyright © 2010 Kevin J. Walsh</p>
+                </section>
+
+            </div> <!-- /slides -->
+        </div> <!-- /reveal -->
+
+        <!-- Reveal.js slides functionality -->
+        <script src="revealjs/js/reveal.js"></script>
+        <script>
+        Reveal.initialize({
+                shuffle: false,
+                keyboard: true,
+                touch: true,
+                loop: false,
+                autoSlide: 0,
+            });
+        </script>
+        
+    </body>
+
+</html>
