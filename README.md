@@ -1,7 +1,3 @@
-# Hackerfeminismo e o empoderamento tecnológico
-Sites com foco a empoderar mulheres em tecnologia
+# Tutorial de HTML básico para oficinas
 
-Apresentação montada para o 17º Fórum Internacional de Software Livre.
-
-Imagens: 1265 x 1050 ou mantendo essa proporção.
-# fazersite
+Adaptado de: [Mozilla Developer Network - Começando na Web](https://developer.mozilla.org/pt-BR/docs/Aprender/Getting_started_with_the_web)
